@@ -12,4 +12,5 @@ Getting started:
     # switch to another shell
     make app2
 
-http://localhost:5001/ shows "Hello 1" as defined for the *schema* test1, and http://localhost:5002/ shows "Hello 2".
+- [http://localhost:5001/](http://localhost:5001/) shows "Hello 1" as defined for the schema test1
+- [http://localhost:5002/](http://localhost:5002/) shows "Hello 2" as defined for the schema test2
