@@ -7,24 +7,15 @@ from flask import Flask
 from flask_multidb import MultiDB
 
 
-# first app and DB
+# first app
 app1 = Flask(__name__)
-app1.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://scott:tiger@localhost/test1'
+app1.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://alice:wonderland@localhost/test1'
 multidb1 = MultiDB(app1)
 
-multidb1.execute("drop table if exists foo")
-multidb1.execute("create table foo (x text)")
-multidb1.execute("insert into foo (x) values ('hello 1')")
-
-
-# second app and DB
+# second app
 app2 = Flask(__name__)
-app2.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://scott:tiger@localhost/test2'
+app2.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://bob:ross@localhost/test2'
 multidb2 = MultiDB(app2)
-
-multidb2.execute("drop table if exists foo")
-multidb2.execute("create table foo (x text)")
-multidb2.execute("insert into foo (x) values ('hello 2')")
 
 
 @app1.route('/')
